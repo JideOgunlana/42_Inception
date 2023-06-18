@@ -53,6 +53,12 @@ services:
     volumes:
       - wp-volume:/var/www/
 
+  my_static_website:
+    build:
+      context: ./requirements/bonus/my_static_website
+    ports:
+      - 8081:8000
+
 volumes:
   wp-volume:
     driver_opts:
