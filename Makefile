@@ -23,9 +23,8 @@ clean: down
 	@printf "Cleaning configuration ${name}...\n"
 	@docker system prune -a
 
-fclean:
+fclean: down
 	@printf "Total clean of all configurations docker\n"
-	#@docker stop $$(docker ps -qa)
 	@docker system prune --all --force --volumes
 	@docker network prune --force
 	@docker volume prune --force
